@@ -32,7 +32,7 @@ public class FirstSeleniumTest {
 
     @AfterMethod(enabled = false)
     public void tearDown() {
-        driver.quit(); //все вкладки и браузер
+        driver.quit(); //все вкладки и браузер закрываются
         //driver.close(); текущая вкладка
     }
 }
