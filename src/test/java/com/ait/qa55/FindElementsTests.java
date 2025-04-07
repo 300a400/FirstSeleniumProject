@@ -27,8 +27,43 @@ public class FindElementsTests {
     }
 
     @Test
-    public void findElementByTagName() {
-        WebElement element = driver.findElement(By.tagName("h1"));
-        System.out.println(element.getText());
+    public void findElementBySimpleLocators(){
+        //by id
+        driver.findElement(By.id("city"));
+        //by className
+        driver.findElement(By.className("header"));
+        System.out.println(driver.findElement(By.className("header")).getText());
+        //by linkText
+        driver.findElement(By.linkText("Let the car work"));
+        //by partialLinkText
+        driver.findElement(By.partialLinkText("car"));
+
+    }
+
+    @Test
+    public void findElementByCssSelector(){
+        //tagName == css
+        driver.findElement(By.cssSelector("h1"));
+
+        //id -> css(#)
+        driver.findElement(By.cssSelector("#city"));
+
+        //by className -> css(.)
+        driver.findElement(By.cssSelector(".header"));
+
+        //[attribute = 'value']
+        driver.findElement(By.cssSelector("[href='/registration?url=%2Fsearch']"));
+
+        //contains -> *
+        driver.findElement(By.cssSelector("[href*='/registration']"));
+
+        //start -> ^
+        driver.findElement(By.cssSelector("[href^='/reg']"));
+
+        //end -> $
+        driver.findElement(By.cssSelector("[href$='search']"));
     }
 }
+
+
+
