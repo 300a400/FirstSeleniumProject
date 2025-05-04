@@ -7,7 +7,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
 import java.time.Duration;
 import java.util.List;
 
@@ -48,14 +47,11 @@ public class TableTests {
 
     @Test
     public void findElementTableWithXpath() {
-
         List<WebElement> rows = driver.findElements(By.xpath("//table[@id='customers']//tr"));
         System.out.println("Количество строк в таблице: " + rows.size());
-
         for (WebElement el : rows) {
             System.out.println(el.getText());
         }
-
         WebElement row4 = driver.findElement(By.xpath("//table[@id='customers']//tr[4]"));
         System.out.println("Содержимое строки 4: " + row4.getText());
 
